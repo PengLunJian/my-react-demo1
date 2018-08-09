@@ -1,0 +1,40 @@
+{
+  "name": "my-react-demo1",
+  "version": "1.0.0",
+  "description": "This is webapp use react for peng",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --progress --watch --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PengLunJian/my-react-demo1.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Peng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PengLunJian/my-react-demo1/issues"
+  },
+  "homepage": "https://github.com/PengLunJian/my-react-demo1#readme",
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less-loader": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^0.22.1",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
