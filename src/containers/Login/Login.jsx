@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ReactDom from 'react-dom';
+import './Login.less';
 
 export default class Login extends Component {
     constructor(props) {
@@ -15,12 +15,9 @@ export default class Login extends Component {
 
     render() {
         return (
-            <h1> Hello, world! </h1>
+            <div className="Login">
+                <h1> Hello, world! </h1>
+            </div>
         );
     }
 }
-
-ReactDom.render(
-    <Login />,
-    document.getElementById('root')
-)
