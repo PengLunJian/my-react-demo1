@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: path.resolve(__dirname, 'src/index.jsx'),
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'js/bundle.js?v=[hash]',
@@ -20,14 +20,29 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'postcss-loader', 'less-loader'],
+                    publicPath: '../'
+                })
+            },
+            {
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 1024,
+                    name: 'images/[hash].[ext]'
+                }
             }
         ]
     },
     resolve: {
-        extensions: ['.js', '.json', '.jsx']
+        extensions: ['.json', '.js', '.jsx']
     },
     plugins: [
+        new ExtractTextPlugin({
+            filename: 'css/main.css?v=[hash]'
+        }),
         new HtmlWebpackPlugin({
             path: 'build',
             template: 'index.html',
@@ -38,5 +53,14 @@ module.exports = {
                 collapseWhitespace: true
             }
         })
-    ]
+    ],
+    devServer: {
+        contentBase: path.resolve(__dirname, "build"),
+        port: 9000,
+        open: true,
+        index: 'index.html',
+        inline: true,
+        hot: false,
+        compress: true
+    }
 };
