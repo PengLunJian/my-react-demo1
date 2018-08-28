@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {LoginTemplate} from './Login.template';
 import './Login.style.less';
 
 export default class Login extends Component {
@@ -7,7 +8,6 @@ export default class Login extends Component {
         this.state = {
             isLogin: false
         };
-        console.log(props);
     }
 
     componentDidMount() {
@@ -22,31 +22,6 @@ export default class Login extends Component {
     };
 
     render() {
-        return (
-            <div className="login">
-                <div className="content">
-                    <div className="header">
-                        <h1 className="title">Backstage Management System</h1>
-                    </div>
-                    <div className="body">
-                        <div className="form-group">
-                            <label className="form-label" for="username"></label>
-                            <input className="form-input" id="username" placeholder="please enter your username"/>
-                        </div>
-                        <div className="form-group">
-                            <label className="form-label" for="password"></label>
-                            <input className="form-input" id="password" placeholder="please enter your password"/>
-                        </div>
-                        <div className="form-group">
-                            <input className="form-checkbox" type="checkbox" id="remember"/>
-                            <label className="form-label" for="remember">Remember the password ?</label>
-                        </div>
-                    </div>
-                    <div className="footer">
-                        <button className="btn-login" onClick={this.handlerLogin}>Login</button>
-                    </div>
-                </div>
-            </div>
-        )
+        return LoginTemplate(this);
     }
 }
