@@ -9,11 +9,11 @@ export const LoginTemplate = (_this) => {
                 </div>
                 <div className="body">
                     <div className="form-group">
-                        <label className="form-label" htmlFor="username"></label>
+                        <label className="form-label" htmlFor="username"/>
                         <input className="form-input" id="username" placeholder="please enter your username"/>
                     </div>
                     <div className="form-group">
-                        <label className="form-label" htmlFor="password"></label>
+                        <label className="form-label" htmlFor="password"/>
                         <input className="form-input" id="password" placeholder="please enter your password"/>
                     </div>
                     <div className="form-group">
