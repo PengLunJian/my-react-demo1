@@ -13,11 +13,13 @@ class LoginInfo extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatchGetUserName();
+
     };
 
     handlerLogin = () => {
-        this.props.dispatchGetUserName();
+        const data = {isLogin: true};
+        this.props.dispatchGetUserName(data);
+
         const {history} = this.props;
         history.push({
             pathname: '/Main'
@@ -30,6 +32,7 @@ class LoginInfo extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
         dispatchGetUserName,
         dispatchGetUserLogo
